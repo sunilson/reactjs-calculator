@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import './CalculatorKey.css';
 
 const CalculatorKey = (props) => {
-
     const classes = ["squareKey"]
     if (props.last) classes.push("bigKey")
 

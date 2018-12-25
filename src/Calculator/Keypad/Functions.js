@@ -11,14 +11,10 @@ const Functions = (props) => {
         "gridTemplateRows": "1fr 1fr 1fr 1fr 1fr 1fr"
     }
 
-    if (props.functions && props.functions.length !== 6) {
-        throw new Error("Can only display exactly 6 functions!")
-    }
+    if (props.functions && props.functions.length !== 6) throw new Error("Can only display exactly 6 functions!")
 
     const keys = props.functions.slice(0, 9).map(func => {
-        return (
-            <CalculatorKey key={func.name} keyData={func}></CalculatorKey>
-        )
+        return <CalculatorKey key={func.name} keyData={func}></CalculatorKey>
     })
 
     return (

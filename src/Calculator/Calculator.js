@@ -24,12 +24,8 @@ export class Calculator extends React.Component {
         if (this.state.firstField && this.state.firstField.length > 0) {
             if (this.state.currentMethod) {
                 return `${this.truncate(this.state.firstField)} ${this.state.currentMethodField} ${this.truncate(this.state.secondField)} `
-            } else {
-                return this.truncate(this.state.firstField)
-            }
-        } else {
-            return ""
-        }
+            } else return this.truncate(this.state.firstField)
+        } else return ""
     }
 
     render() {
@@ -119,19 +115,15 @@ export class Calculator extends React.Component {
 
     truncate(s) {
         const split = s.toString().split(".")
-        if (split[1] && split[1].length > 3) {
-            return `${split[0]}.${split[1].substring(0, 3)}...`
-        } else if (!split[1]) {
-            return `${split[0]}`
-        } else {
-            return `${split[0]}.${split[1]}`
-        }
+        if (split[1] && split[1].length > 3) return `${split[0]}.${split[1].substring(0, 3)}...`
+        else if (!split[1]) return `${split[0]}`
+        else return `${split[0]}.${split[1]}`
     }
 
     calculate() {
-        if (this.state.firstField.length > 0 && this.state.secondField.length > 0 && this.state.currentMethod) {
-            return this.state.currentMethod(Number.parseFloat(this.state.firstField), Number.parseFloat(this.state.secondField))
-        }
+        if (this.state.firstField.length > 0
+            && this.state.secondField.length > 0
+            && this.state.currentMethod) return this.state.currentMethod(Number.parseFloat(this.state.firstField), Number.parseFloat(this.state.secondField))
         return null
     }
 }

@@ -13,7 +13,9 @@ const CenteredContainer = () => {
     const style = {
         "width": "50vh",
         "height": "80vh",
-        "boxShadow": "0px 0px 84px -12px rgba(95,95,95,1)"
+        "boxShadow": "0px 0px 84px -12px rgba(95,95,95,1)",
+        "overflow": "hidden",
+        "borderRadius": "20px"
     }
 
     return <div style={outerStyle}>
