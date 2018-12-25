@@ -8,7 +8,6 @@ const CalculatorDisplay = (props) => {
         height: "100%",
         background: "black",
         color: "green",
-        fontSize: 40,
         padding: "30px",
         boxSizing: "border-box"
     }
@@ -20,10 +19,10 @@ const CalculatorDisplay = (props) => {
     }
 
     return <div style={style}>
-        <div style={{ height: "70%", display: "flex", alignItems: "center", ...wrapStyle }} className="displayText">
+        <div style={{ height: "70%", display: "flex", alignItems: "center", ...wrapStyle }} className="text">
             {props.text}
         </div>
-        <div style={{ fontSize: 30, height: "30%", display: "flex", alignItems: "center", ...wrapStyle }}>
+        <div style={{ height: "30%", display: "flex", alignItems: "center", ...wrapStyle }} className="subText">
             {props.subText}
         </div>
     </div>
